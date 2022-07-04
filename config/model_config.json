@@ -1,0 +1,25 @@
+{
+    "Transformer": {
+        "num_layers": 12,
+        "num_heads": 8,
+        "official": false,
+        "dropout": 0.1, 
+        "attention_dropout": 0.1
+    },
+
+    "SpeechFormer": {
+        "num_layers": [2, 2, 4, 4],
+        "expand": [1, 1, 1],
+        "num_heads": 8,
+        "dropout": 0.1, 
+        "attention_dropout": 0.1
+    },
+
+    "SpeechFormer_v2": {
+        "num_layers": [2, 2, 4, 4],
+        "expand": [1, 1, 1],
+        "num_heads": 8,
+        "dropout": 0.1, 
+        "attention_dropout": 0.1
+    }
+}

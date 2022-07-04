@@ -1,0 +1,84 @@
+{   
+    "num_classes": 4,
+
+    "evaluate": ["accuracy", "recall"],
+
+    "meta_csv_file": "/148Dataset/data-chen.weidong/iemocap/feature/name_label_text.csv",
+    
+    "spec": {
+        "feature_dim": 161, 
+        "lmdb_root": "/148Dataset/data-chen.weidong/lmdb/iemocap_spec",
+        "matdir": "/148Dataset/data-chen.weidong/iemocap/feature/wav_spec_20ms_mat",
+        "matkey": "spec", 
+        "length": 653,
+        "pad_value": -80,
+        "frame": 0.02,
+        "hop": 0.01
+    },
+
+    "wav2vec": {
+        "feature_dim": 512, 
+        "lmdb_root": "/148Dataset/data-chen.weidong/lmdb/iemocap_wav2vec",
+        "matdir": "/148Dataset/data-chen.weidong/iemocap/feature/wav_wav2vec_mat",
+        "matkey": "wav", 
+        "length": 651,
+        "pad_value": 0,
+        "frame": 0.03,
+        "hop": 0.01
+    },
+
+    "logmel": {
+        "feature_dim": 128, 
+        "lmdb_root": "/148Dataset/data-chen.weidong/lmdb/iemocap_logmel",
+        "matdir": "/148Dataset/data-chen.weidong/iemocap/feature/logmel_25ms_mat",
+        "matkey": "logmel", 
+        "length": 651,
+        "pad_value": 0,
+        "frame": 0.025,
+        "hop": 0.01
+    },
+
+    "hubert12": {
+        "feature_dim": 1024, 
+        "lmdb_root": "/148Dataset/data-chen.weidong/lmdb/iemocap_hubert_L12",
+        "matdir": "/148Dataset/data-chen.weidong/iemocap/feature/hubert_large_L12_mat",
+        "matkey": "hubert", 
+        "length": 326,
+        "pad_value": 0,
+        "frame": 0.025,
+        "hop": 0.02
+    },
+
+    "hubert24": {
+        "feature_dim": 1024, 
+        "lmdb_root": "/148Dataset/data-chen.weidong/lmdb/iemocap_hubert_L24",
+        "matdir": "/148Dataset/data-chen.weidong/iemocap/feature/hubert_large_L24_mat",
+        "matkey": "hubert", 
+        "length": 326,
+        "pad_value": 0,
+        "frame": 0.025,
+        "hop": 0.02
+    },
+
+    "w2v12": {
+        "feature_dim": 1024, 
+        "lmdb_root": "/148Dataset/data-chen.weidong/lmdb/iemocap_w2v2_L12",
+        "matdir": "/148Dataset/data-chen.weidong/iemocap/feature/w2v2_large_L12_mat",
+        "matkey": "w2v2", 
+        "length": 326,
+        "pad_value": 0,
+        "frame": 0.025,
+        "hop": 0.02
+    },
+
+    "w2v24": {
+        "feature_dim": 1024, 
+        "lmdb_root": "/148Dataset/data-chen.weidong/lmdb/iemocap_w2v2_L24",
+        "matdir": "/148Dataset/data-chen.weidong/iemocap/feature/w2v2_large_L24_mat",
+        "matkey": "w2v2", 
+        "length": 326,
+        "pad_value": 0,
+        "frame": 0.025,
+        "hop": 0.02
+    }
+}
