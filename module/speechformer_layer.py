@@ -7,31 +7,7 @@ Created on Fri Jan 14 16:36:11 CST 2022
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from module.utils import _get_activation_fn, add_position
-
-def get_overlap_segments(x: torch.Tensor, window_size: int):
-     '''Get overlap segments for local attention. Sacrifice memory for speed.
-
-    Args: 
-        x: Input sequence in shape (B, T, C).
-        window_size: The needed length of the segment. Must be an odd number.
-    
-    Return:
-        (b, t, window_size, c)
-     '''
-     # assert window_size % 2, f'window_size must be an odd number, but get {window_size}.'
-     if not window_size % 2:
-         window_size += 1     # window_size must be an odd number
-     
-     b, t, c = x.shape
-     pad_len = (window_size - 1) // 2
-     x = F.pad(x, (0, 0, pad_len, pad_len), value=0)
-
-     stride = x.stride()
-     out_shape = (b, t, window_size, c)
-     out_stride = (stride[0], stride[1], stride[1], stride[2])
-
-     return torch.as_strided(x, size=out_shape, stride=out_stride)
+from module.utils import _get_activation_fn, add_position, get_overlap_segments
 
 class Speech_MSA(nn.Module):
     ''' Speech-based Multi-Head Self-Attention (Speech-MSA)
