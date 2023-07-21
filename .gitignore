@@ -1,8 +1,6 @@
 exp/
-figures/
 result/
 temp/
-km_init/
 .vscode/
 
 __pycache__/
@@ -10,7 +8,6 @@ __pycache__/
 *.pkl
 *.pt
 *.pth
-*.png
 *.wav
 *.mp3
 *.csv
